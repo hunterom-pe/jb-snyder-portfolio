@@ -70,13 +70,7 @@
   border: 2px solid var(--border-color); /* Emulating his black outlines */
 }
 
-.gallery-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  z-index: 10;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-
-/* Dynamic Mouse Tracking Glow */
+/* Base Classes that apply everywhere */
 .glow-border {
   position: absolute;
   inset: 0;
@@ -88,30 +82,11 @@
   border: 2px solid transparent;
 }
 
-.gallery-item:hover .glow-border {
-  opacity: 1;
-  background: radial-gradient(
-    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(232, 28, 255, 0.15),
-    transparent 40%
-  );
-  border-image: radial-gradient(
-    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    var(--accent-cyan),
-    var(--accent-magenta),
-    transparent 50%
-  ) 1;
-}
-
 .gallery-item img {
   width: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.6s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05); /* Micro-animation */
 }
 
 /* Glassmorphism Overlay */
@@ -128,25 +103,10 @@
   transition: opacity 0.4s ease;
 }
 
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
 .overlay-content {
   text-align: center;
   transform: translateY(20px);
   transition: transform 0.4s ease;
-}
-
-.gallery-item:hover .overlay-content {
-  transform: translateY(0);
-}
-
-.overlay-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 /* Mobile & Touch Specific Optimizations */
@@ -173,6 +133,59 @@
     padding: 0.4rem 1rem;
     font-size: 0.8rem;
   }
+
+  /* Ensure the glow border activates on tap exactly where tapped */
+  .gallery-item:active .glow-border {
+    opacity: 1;
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(232, 28, 255, 0.4),
+      transparent 40%
+    );
+  }
+}
+
+/* Hover-Only Devices */
+@media (hover: hover) {
+  .gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  }
+
+  .gallery-item:hover .glow-border {
+    opacity: 1;
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(232, 28, 255, 0.15),
+      transparent 40%
+    );
+    border-image: radial-gradient(
+      400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      var(--accent-cyan),
+      var(--accent-magenta),
+      transparent 50%
+    ) 1;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05); /* Micro-animation */
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover .overlay-content {
+    transform: translateY(0);
+  }
+}
+
+.overlay-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .view-btn {

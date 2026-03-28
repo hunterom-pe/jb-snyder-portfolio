@@ -32,8 +32,16 @@ const Hero = () => {
           className="hero-title"
           style={{ rotateX, rotateY }}
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -10, 0] 
+          }}
+          transition={{ 
+            opacity: { duration: 1 },
+            scale: { duration: 1 },
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+          }}
         >
           <span className="stroke-text">JB</span> SNYDER
         </motion.h1>
@@ -50,6 +58,15 @@ const Hero = () => {
         <motion.div 
           className="hero-accents"
           style={{ x: xAccent, y: yAccent }}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 1,
+            y: [0, 5, 0]
+          }}
+          transition={{ 
+            opacity: { duration: 1, delay: 0.4 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+          }}
         >
           <span className="accent-bar magenta"></span>
           <span className="accent-bar cyan"></span>

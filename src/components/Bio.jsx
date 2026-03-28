@@ -1,33 +1,69 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Bio.css';
 
 const Bio = () => {
   return (
-    <section className="bio-section fade-in">
-      <div className="bio-container">
+    <footer className="bio-section">
+      <motion.div 
+        className="bio-container"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="bio-content">
-          <h2>About The Artist</h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            The Artist
+          </motion.h2>
           <div className="underline magenta-glow"></div>
-          <p className="bio-text">
-            JB Snyder is an abstract expressionist and muralist based in Phoenix, Arizona. 
-            His work is characterized by energetic linework, bold geometric structures, and vibrant explosions of color that often resemble topological webs or modern stained-glass mosaics. 
-            Blending the raw intensity of street art with complex structural networks, JB's art creates infinite connections and undeniable movement on the canvas.
-          </p>
-          <div className="social-links">
-            <a href="https://www.instagram.com/jb_snyder" target="_blank" rel="noopener noreferrer" className="social-btn">
-              Follow on Instagram
+          
+          <motion.p 
+            className="bio-text"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            JB Snyder is an abstract muralist and fine artist based in the American Southwest. 
+            His work is characterized by a "controlled chaos" approach, featuring 
+            high-energy linework, bold geometric structures, and a signature neon-on-dark palette. 
+            Drawing inspiration from urban exploration and post-graffiti aesthetics, 
+            JB's pieces transform static environments into living, breathing compositions of 
+            light and energy.
+          </motion.p>
+          
+          <motion.div 
+            className="social-links"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <a 
+              href="https://www.instagram.com/jb_snyder" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn"
+            >
+              Instagram
             </a>
-            <a href="mailto:JBSnyderart@gmail.com" className="social-btn outline">
-              Contact
+            <a href="mailto:hello@jbsnyder.com" className="social-btn outline">
+              Contact JB
             </a>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} JB Snyder Art. All Rights Reserved.</p>
-      </footer>
-    </section>
+        
+        <div className="footer">
+          <p>&copy; 2026 JB Snyder | All Rights Reserved</p>
+        </div>
+      </motion.div>
+    </footer>
   );
 };
 
