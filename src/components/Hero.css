@@ -6,8 +6,13 @@
   align-items: center;
   position: relative;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background: radial-gradient(circle at top, var(--bg-dark), var(--bg-darker));
+}
+@media (min-width: 768px) {
+  .hero-container {
+    padding: 2rem;
+  }
 }
 
 .hero-content {
@@ -17,7 +22,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 12vw, 8rem);
   text-transform: uppercase;
   letter-spacing: -0.05em;
   margin-bottom: 0.2rem;
