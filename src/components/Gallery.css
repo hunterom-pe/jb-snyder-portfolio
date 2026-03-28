@@ -72,9 +72,35 @@
 
 .gallery-item:hover {
   transform: translateY(-5px) scale(1.02);
-  border-color: var(--accent-magenta);
   z-index: 10;
-  box-shadow: 0 10px 30px rgba(232, 28, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Dynamic Mouse Tracking Glow */
+.glow-border {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  border: 2px solid transparent;
+}
+
+.gallery-item:hover .glow-border {
+  opacity: 1;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(232, 28, 255, 0.15),
+    transparent 40%
+  );
+  border-image: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--accent-cyan),
+    var(--accent-magenta),
+    transparent 50%
+  ) 1;
 }
 
 .gallery-item img {
