@@ -57,6 +57,9 @@
 
 .gallery-item {
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
   margin-bottom: 1.5rem;
   break-inside: avoid;
   border-radius: var(--border-radius);

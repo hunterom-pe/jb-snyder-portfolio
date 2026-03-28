@@ -12,7 +12,13 @@ const Gallery = () => {
       
       <div className="gallery-masonry">
         {portfolioImages.map((image) => (
-          <div key={image.id} className="gallery-item fade-in">
+          <a 
+            key={image.id} 
+            href="https://www.instagram.com/jb_snyder" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="gallery-item fade-in"
+          >
             <img 
               src={image.url} 
               alt={image.title} 
@@ -21,10 +27,10 @@ const Gallery = () => {
             <div className="gallery-overlay">
               <div className="overlay-content">
                 <h3>{image.title}</h3>
-                <span className="view-btn">View Art</span>
+                <span className="view-btn">View on Instagram</span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

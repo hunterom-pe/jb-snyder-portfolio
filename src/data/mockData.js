@@ -2,7 +2,7 @@ export const portfolioImages = [
   {
     id: 1,
     url: "/art/art1.jpg",
-    title: "Abstract Mask",
+    title: "Abstract Art",
     width: "100%",
     aspectRatio: "1/1"
   },
@@ -23,7 +23,7 @@ export const portfolioImages = [
   {
     id: 4,
     url: "/art/art4.jpg",
-    title: "Vibrant Mural",
+    title: "Sunset",
     width: "100%",
     aspectRatio: "4/3"
   },
