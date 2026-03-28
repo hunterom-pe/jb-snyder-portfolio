@@ -33,5 +33,12 @@ export const portfolioImages = [
     title: "Neural Structure",
     width: "100%",
     aspectRatio: "3/4"
+  },
+  {
+    id: 6,
+    url: "/art/art6.jpg",
+    title: "Geometric Expansion",
+    width: "100%",
+    aspectRatio: "1/1"
   }
 ];
