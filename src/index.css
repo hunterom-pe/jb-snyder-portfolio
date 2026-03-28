@@ -1,0 +1,76 @@
+:root {
+  /* Color Palette inspired by JB Snyder's work */
+  --bg-dark: #0a0a0a;
+  --bg-darker: #050505;
+  --text-primary: #fdfdfd;
+  --text-secondary: #a0a0a0;
+  
+  --accent-magenta: #e81cff;
+  --accent-cyan: #00f0ff;
+  --accent-yellow: #f8e500;
+  --accent-blue: #0047ff;
+
+  --black-line: #000000;
+  --border-color: #222222;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif; /* Bold, structural, artistic */
+  --font-body: 'Inter', system-ui, Avenir, Helvetica, sans-serif;
+  
+  --spacing-base: 1rem;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-magenta);
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.portfolio-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

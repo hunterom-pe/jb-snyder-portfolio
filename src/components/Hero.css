@@ -1,0 +1,87 @@
+.hero-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  background: radial-gradient(circle at top, var(--bg-dark), var(--bg-darker));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: -10vh;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 10vw, 8rem);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--accent-magenta);
+  text-shadow: 0 0 20px rgba(232, 28, 255, 0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.hero-accents {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.accent-bar {
+  display: inline-block;
+  height: 8px;
+  width: 40px;
+  border-radius: 4px;
+}
+
+.accent-bar.magenta { background-color: var(--accent-magenta); box-shadow: 0 0 10px var(--accent-magenta); }
+.accent-bar.cyan { background-color: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+.accent-bar.yellow { background-color: var(--accent-yellow); box-shadow: 0 0 10px var(--accent-yellow); }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.arrow-down {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--accent-cyan));
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 15px); }
+}
